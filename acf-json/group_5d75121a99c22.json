@@ -1,0 +1,81 @@
+{
+    "key": "group_5d75121a99c22",
+    "title": "Block: Code Block",
+    "fields": [
+        {
+            "key": "field_5d7515fd041a7",
+            "label": "Language:",
+            "name": "language",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "js": "Javascript",
+                "php": "PHP",
+                "css": "CSS",
+                "html": "HTML",
+                "scss": "SCSS",
+                "less": "LESS",
+                "jsx": "React JSX",
+                "graphql": "GraphQL",
+                "json": "JSON",
+                "regex": "Regex",
+                "sql": "SQL",
+                "twig": "Twig",
+                "ts": "TypeScript"
+            },
+            "default_value": [
+                "js"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d75122084027",
+            "label": "Code Block",
+            "name": "code_block",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 10,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/code"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1583594225
+}

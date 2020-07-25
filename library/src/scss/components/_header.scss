@@ -1,0 +1,218 @@
+header#header {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	background: $black;
+	color: #fff;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+	.header-logo {
+		position: relative;
+		display: block;
+		height: 100%;
+		max-width: 50%;
+		a {
+			padding: 10px 10px 0px;
+			box-sizing: border-box;
+			height: 50px;
+			display: block;
+			@media(min-width: $tablet) {
+				height: 60px;
+			}
+			img {
+				display: block;
+				height: 100%;
+			}
+		}
+	}
+}
+
+header .nav-container {
+	display: flex;
+	flex-direction: row-reverse;
+	flex: 1 0;
+	@media(min-width: $tablet) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	nav {
+		padding: 5px 20px;
+		@media(min-width: $tablet) {
+			padding: 0px 20px;
+		}
+		.menu-main-menu-container {
+			height: 100%;
+			@media(min-width: $tablet) {
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}
+
+// Menu
+#menu-main-menu {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 20px;
+	background: $black;
+	border-top: 2px solid $darkGray;
+	list-style: none;
+	-webkit-padding-start: 20px;
+	flex-wrap: wrap;
+	@media(min-width: $tablet) {
+		display: flex!important;
+		height: 100%;
+		position: relative;
+		top: auto;
+		left: auto;
+		border: none;
+		padding: 0;
+	}
+	li {
+		padding: 15px 0;
+		border-bottom: 1px solid $darkGray;
+		width: 100%;
+		@media(min-width: $tablet) {
+			border: none;
+			width: auto;
+			padding: 0px;
+			height: 100%;
+		}
+		a {
+			display: block;
+			display: flex;
+			align-items: center;
+			height: 100%;
+			text-transform: uppercase;
+			font-size: 12px;
+			letter-spacing: .08em;
+			font-weight: 700;
+			text-decoration: none;
+			color: #ebebeb;
+			transition: all .3s;
+			@media(min-width: $tablet) {
+				padding: 0px 15px;
+			}
+			&:hover {
+				color: $purple;
+				@media(min-width: $tablet) {
+					background: $purple;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+// menu trigger
+nav button {
+	display: block;
+	position: relative;
+	background: transparent;
+	height: 100%;
+	width: 35px;
+	border: none;
+	@media(min-width: $tablet) {display: none}
+	&:before, &:after {
+		content: '';
+		height: 3px;
+		position: absolute;
+		top: 12px;
+		right: 0;
+		width: 60%;
+		background: #fff;
+		transition: all .3s;
+	}
+	&:after {
+		width: 100%;
+		bottom: 12px;
+		top: auto;
+	}
+	&.open {
+		&:before, &.after { width: 100%; top: 20px; }
+		&:before {
+			transform: rotate(-135deg);
+		}
+		&:after {
+			transform: rotate(-45deg);
+			bottom: auto;
+		}
+	}
+}
+
+// search trigger
+header .search-trigger {
+	padding: 5px 20px;
+	display: flex;
+	align-items: center;
+	border: none;
+	background: none;
+	background: lighten($black, 7%);
+	transition: all .3s;
+	&:hover {
+		cursor: pointer;
+		background: lighten($black, 10%);
+	}
+	svg {
+		height: 20px;
+		path {
+			fill: #ebebeb;
+		}
+	}
+}
+
+#searchform {
+	display: none;
+	padding: 20px 0;
+	background: #fff;
+	width: 100%;
+	box-shadow: inset 0px 0px 10px -5px rgba(0,0,0,0.5);
+	.wrapper {
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		flex-direction: row-reverse;
+		padding-top: 20px;
+	}
+	label {
+		&[for="search"] {
+			width: 100%;
+		}
+		&.submit {
+			width:auto;
+			text-align: center;
+			svg {
+				width: 20px;
+				path { fill: #999 }
+			}
+		}
+		input, button {
+			width: 100%;
+			height: 30px;
+			padding: 5px 10px;
+			background: none;
+			border-width: 0px;
+			border-bottom: 2px solid #E0E0E0;
+			font-family: $display;
+			font-weight: 700;
+			color: $darkGray;
+		}
+		p {
+			top: 0px;
+			left: 30px;
+			margin: 0;
+			position: absolute;
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: 700;
+			letter-spacing: .08em;
+			color: #999;
+		}
+	}
+}

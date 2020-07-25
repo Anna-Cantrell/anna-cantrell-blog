@@ -1,0 +1,93 @@
+body.single .main-footer { margin-top: 0px; }
+.main-footer {
+  border-top: 10px solid $black;
+  padding-top: 40px;
+  min-height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 40px;
+  background-color: #fff;
+  background-image: url('library/media/godzilla-pastel.png');
+  background-size: auto 90%;
+  background-position: 100% 101%;
+  background-repeat: no-repeat;
+  .wrapper {
+    width: 100%;
+  }
+  .footer-navigation {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    padding-bottom: 70px;
+    img {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      max-width: 100%;
+      height: 60px;
+    }
+  }
+}
+
+.menu-footer-menu-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  @media(min-width:$desktop) {
+    justify-content: center;
+  }
+}
+#menu-footer-menu {
+  list-style: none;
+  -webkit-padding-start: 0px;
+  a {
+    position: relative;
+    color: $darkGray;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    z-index: 1;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      width: calc(100% - 12px);
+      height: 5px;
+      left: 4px;
+      bottom: 7px;
+      background-color: rgba($pink, 0.3);
+      transition: all .2s;
+      z-index: -1;
+    }
+    &:after {
+      background-color: #fff;
+      width: 4px;
+      left: 0px;
+      transition: all .4s ease-out;
+    }
+    &:hover {
+      color: $pink;
+      &:after {
+        left: 100%;
+      }
+    }
+  }
+}
+
+
+footer .post-footer {
+  height: auto;
+  padding: 10px 20px;
+  background: $black;
+  color: $white;
+  font-size: 14px;
+  a {
+    color: $purple;
+    padding: 0 20px;
+    text-decoration: none;
+  }
+}

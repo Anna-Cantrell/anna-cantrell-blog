@@ -1,0 +1,62 @@
+{
+    "key": "group_5dc715d6889f1",
+    "title": "Block: Bio",
+    "fields": [
+        {
+            "key": "field_5dc715da652c7",
+            "label": "Content",
+            "name": "content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<h2>Thanks so much for reading!<\/h2>\r\nMy name is Anna Cantrell and I like to build things. I'm a queer woman in tech working primarily in front end development in an agency setting. This blog is very, very, unfocused. It's mostly just things I've come across that seemed like it'd be helpful for someone to read. I hope it was! If you have any questions or anything you can contact me at annac.webdev@gmail.com.",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5dc716f4652c8",
+            "label": "Disclaimer",
+            "name": "disclaimer",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/bio"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1573328643
+}

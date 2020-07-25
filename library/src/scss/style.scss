@@ -1,0 +1,22 @@
+/*!
+Theme Name: Gucci
+Author: Anna Cantrell
+Author URI: https://annacantrell.design/
+Description: Modified WordPress starter theme based off Brisk by Autumn Welles.
+Version: 1.0.0
+GitHub Theme URI: Anna-Cantrell/gucci
+*/
+
+@import './base/variables';
+@import './base/global';
+@import './base/layout';
+@import './components/header';
+@import './pages/blog-home';
+@import './pages/single';
+@import './pages/archive';
+@import './components/pagination';
+@import './components/footer';
+
+@import './blocks/tldr';
+@import './blocks/bio';
+@import './blocks/wysiwyg';

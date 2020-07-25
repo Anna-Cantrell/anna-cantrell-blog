@@ -1,0 +1,40 @@
+nav.pagination {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 40px 0;
+  span, a {
+    position: relative;
+    font-size: 18px;
+    padding: 5px 10px;
+    font-weight: 700;
+    color: $purple;
+    text-decoration: none;
+    z-index: 1;
+  }
+  a {
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      width: calc(100% - 12px);
+      height: 5px;
+      left: 4px;
+      bottom: 7px;
+      background-color: rgba($pink, 0.3);
+      transition: all .2s;
+      z-index: -1;
+    }
+    &:after {
+      background-color: #f8f8f8;
+      width: 4px;
+      left: 0px;
+      transition: all .4s ease-out;
+    }
+    &:hover {
+      color: $pink;
+      &:after {
+        left: 100%;
+      }
+    }
+  }
+}

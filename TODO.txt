@@ -1,0 +1,5 @@
+1. Navigation / footer
+2. Blog homepage
+3. blog article pages
+4. portfolio home page
+5. individual portfolio work pages
