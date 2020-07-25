@@ -6,7 +6,8 @@ var gulp = require('gulp');
     browserSync = require('browser-sync'),
     runSequence = require('run-sequence'),
     pump = require('pump'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    sassGlob = require('gulp-sass-glob');
 
 
 var paths = {
@@ -35,6 +36,7 @@ gulp.task('templates', function() {
 // Do SCSS things
 gulp.task('styles', function(){
     return gulp.src(paths.scss)
+    .pipe(sassGlob())
     .pipe(sass())
     .pipe(minifyCSS())
     .pipe(gulp.dest('./'))

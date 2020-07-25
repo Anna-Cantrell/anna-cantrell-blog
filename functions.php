@@ -37,7 +37,9 @@ add_action('wp_enqueue_scripts', 'gucci_styles');
  * Enqueue block editor style
  */
 function gucci_block_editor_styles() {
-    wp_enqueue_style( 'gucci-editor-styles', get_theme_file_uri( 'editor-styles.css' ), false, '1.0', 'all' );
+	// load fonts
+	wp_enqueue_style('gucci-font', 'https://fonts.googleapis.com/css?family=Crimson+Pro:400,400i,700|Montserrat:500,600,700,800&display=swap');
+  wp_enqueue_style( 'gucci-editor-styles', get_theme_file_uri( 'editor-styles.css' ), false, '1.0', 'all' );
 }
 add_action( 'enqueue_block_editor_assets', 'gucci_block_editor_styles' );
 
