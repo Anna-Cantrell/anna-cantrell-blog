@@ -21,28 +21,35 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<article>
 				<div class="progress-bar"></div>
-					<section class="article-head-section">
-						<div class="article-image-container">
-							<img src="<?=$thumbnail_url?>" alt="<?=$alt?>"/>
-						</div>
-						<div class="wrapper">
-							<div class="title-content">
-								<h1><?=$title?></h1>
-								<div class="meta-info">
-									<span><?=get_post_meta($post->ID, 'read_estimate')[0];?> min read |</span>
-									<?php if($category[0]->name) : ?>
-										<span><a href="<?=get_site_url()?>/category/<?=$category[0]->slug?>/"><?=$category[0]->name?></a> |</span>
-									<?php endif; ?>
-									<span><?=$the_date?></span>
-								</div>
+				<section class="article-head-section">
+					<div class="article-image-container">
+						<img src="<?=$thumbnail_url?>" alt="<?=$alt?>"/>
+					</div>
+					<div class="wrapper">
+						<div class="title-content">
+							<h1><?=$title?></h1>
+							<div class="meta-info">
+								<span><?=get_post_meta($post->ID, 'read_estimate')[0];?> min read |</span>
+								<?php if($category[0]->name) : ?>
+									<span><a href="<?=get_site_url()?>/category/<?=$category[0]->slug?>/"><?=$category[0]->name?></a> |</span>
+								<?php endif; ?>
+								<span><?=$the_date?></span>
 							</div>
 						</div>
-					</section>
-					<section class="content">
-						<div class="wrapper">
-							<?php the_content(); ?>
+					</div>
+				</section>
+				<section class="content">
+					<div class="wrapper wrapper--article">
+						<?php the_content(); ?>
+					</div>
+				</section>
+				<?php if(comments_open()) : ?>
+					<section class="comments">
+						<div class="wrapper wrapper--article">
+							<?php comments_template(); ?>
 						</div>
 					</section>
+				<?php endif; ?>
 			</article>
 		<?php endwhile; ?>
 <?php endif; ?>

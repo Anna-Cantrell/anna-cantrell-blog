@@ -10,3 +10,22 @@
 .alignfull img {
     width: 100vw;
 }
+
+.wrapper {
+  width: 100%;
+  max-width: $desktopMedium;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+  @media(min-width: $tablet) {
+    padding: 0 20px;
+  }
+
+  &--article {
+    padding: 0 30px;
+    max-width: 900px;
+    @media(min-width: $tablet) {
+      padding: 0 100px;
+    }
+  }
+}

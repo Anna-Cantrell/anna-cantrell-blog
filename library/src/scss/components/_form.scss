@@ -1,0 +1,70 @@
+form.general-form {
+  max-width: 500px;
+  margin: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .field {
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-family: $display;
+      background: #fff;
+      border-radius: 5px;
+      border: 1px solid $purple;
+      &:focus {
+        outline-color: $purple;
+      }
+    }
+    @media(min-width:$tablet) {
+      &.half {
+        width: calc(50% - 10px);
+      }
+    }
+    &.error {
+      input, textarea {
+        border-color: $error;
+      }
+      label {
+        color: $error;
+      }
+    }
+  }
+  label {
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    padding: 0 5px;
+    background: #fff;
+    transition: all .2s;
+  }
+  .field.label-up label {
+    font-size: 12px;
+    top: -6px;
+    background: linear-gradient(to bottom, #f8f8f8, #fff);
+  }
+
+  .form-submit {
+    margin: 5px 0;
+    input[type="submit"] {
+      border: 2px solid $purple;
+      background: transparent;
+      padding: 10px 20px;
+      font-family: $display;
+      font-weight: $bold;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      transition: all .2s;
+      cursor: pointer;
+      &:hover {
+        background: $purple;
+        color: #fff;
+      }
+    }
+  }
+}

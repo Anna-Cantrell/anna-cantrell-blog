@@ -66,13 +66,6 @@ section.article-head-section {
 
 section.content {
   font-family: $body;
-  .wrapper {
-    padding: 0 30px;
-    max-width: 900px;
-    @media(min-width: $tablet) {
-      padding: 0 100px;
-    }
-  }
   h2 {
     margin-top: 44px;
   }

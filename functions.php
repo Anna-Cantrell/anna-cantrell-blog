@@ -30,6 +30,10 @@ function gucci_styles() {
 	wp_enqueue_style('gucci-style', get_template_directory_uri() . '/style.css');
 	// Load main javascript
 	wp_enqueue_script('gucci-script', get_template_directory_uri() . '/library/js/functions.min.js', array('jquery'), '1.0', true);
+	// Comment Reply Script
+	if (is_singular() && comments_open() && (get_option('thread_comments') == 1)) {
+    wp_enqueue_script('comment-reply', 'wp-includes/js/comment-reply', array(), false, true);
+	}
 }
 add_action('wp_enqueue_scripts', 'gucci_styles');
 
@@ -175,7 +179,10 @@ function get_svg($key) {
 	return $content;
 }
 
-
+/**
+ * Estimate time to read
+ * @return string
+*/
 // call back function to retrieve meta
 function slug_get_post_meta_cb( $object, $field_name, $request ) {
   return get_post_meta( $object[ 'id' ], $field_name );
@@ -202,3 +209,23 @@ add_action( 'save_post', 'add_read_estimate_meta' );
 
 // Include blocks
 require_once('library/theme-functions/acf-blocks.php');
+
+
+// Filter Comments Form
+function gucci_comment_form_tweaks ($fields) {
+	unset($fields['url']);
+	$fields['author'] = '<div class="field half">
+	<label for="author">Name <span class="required">*</span></label>
+	<input id="author" name="author" class="requiredfield" placeholder="" type="text" value="" size="30" maxlength="245" required="required">
+	</div>';
+	$fields['email'] = '<div class="field half">
+	<label for="email">Email <span class="required">*</span></label>
+	<input id="email" name="email" class="requiredfield" placeholder="" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required">
+	</div>';
+	$fields['comment'] = '<div class="field">
+	<label for="comment">Comment <span class="required">*</span></label>
+	<textarea id="comment" class="requiredfield" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea>
+	</div>';
+  return $fields;
+}
+add_filter('comment_form_fields', 'gucci_comment_form_tweaks');

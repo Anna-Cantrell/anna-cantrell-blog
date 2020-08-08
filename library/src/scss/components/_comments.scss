@@ -1,0 +1,117 @@
+section.comments {
+  padding: 50px 0;
+  .wrapper {
+    border-top: 2px solid $purple;
+    padding-top: 40px;
+  }
+  ul.post-comments {
+    padding-left: 0px;
+    list-style: none;
+  }
+  ul.post-comments li.comment {
+    background: $white;
+    &.odd {
+      background: $background;
+    }
+    ul { list-style: none; }
+    ul.children {
+      border: 2px solid $background;
+      .comment-body { border: 0; }
+    }
+
+
+    .comment-body {
+      border: 2px solid $background;
+
+      @media(min-width: $tablet) {
+        display: grid;
+        grid-template-columns: 110px auto;
+        grid-template-rows: auto auto auto;
+      }
+      .comment-author {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        background: rgba($purple, .2);
+        img { margin-right: 20px;}
+        span { display: none; }
+        cite, cite a {
+          font-weight: $bold;
+          font-size: 16px;
+          font-style: normal;
+          text-decoration: none;
+          color: $black;
+        }
+        @media(min-width:$tablet) {
+          flex-direction: column;
+          justify-content: center;
+          grid-row-start: 1;
+          grid-row-end: last-line;
+          img { margin: 0 0 10px 0; }
+          cite {
+            width: 100%;
+            text-align: center;
+            word-wrap: break-word;
+          }
+        }
+      }
+      .comment-meta {
+        padding: 10px;
+        font-size: 14px;
+        a {
+          color: $darkGray;
+          text-decoration: none;
+        }
+        @media(min-width:$desktop) { padding: 18px; }
+      }
+      p, ul, ol, div, blockquote {
+        padding: 0 10px;
+        color: $darkGray;
+        line-height: 24px;
+        @media(min-width:$desktop) { padding: 0 18px; }
+      }
+      .reply {
+        padding: 10px;
+        text-align: right;
+        @media(min-width:$desktop) { padding: 18px; }
+        a {
+          padding: 5px 10px;
+          background: $purple;
+          border: 2px solid $purple;
+          color: #fff;
+          text-transform: uppercase;
+          font-weight: $bold;
+          letter-spacing: .05em;
+          text-decoration: none;
+          font-size: 11px;
+          transition: all .2s;
+          &:after { display: none; }
+          &:hover {
+            background: transparent;
+            color: $purple;
+          }
+        }
+      }
+    }
+
+    .comment-respond {
+      border: 2px solid #fff;
+      padding: 10px;
+      h3.comment-reply-title {
+        margin: 0;
+        a {
+          color: $black;
+          text-decoration: none;
+        }
+      }
+      form {
+        margin: 20px 0;
+        .field.label-up label {
+          background: linear-gradient(to bottom, $white, #fff);
+        }
+      }
+    }
+
+  }
+}

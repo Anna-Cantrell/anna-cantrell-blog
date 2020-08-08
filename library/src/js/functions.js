@@ -88,4 +88,63 @@
     }
     window.onload = deferIframe;
 
+    // ===== CONTACT FORM ===== //
+  	var formHandler = {
+  		settings: {
+  			comment_form: $('#commentform'),
+  			input: $('#commentform input, #commentform textarea'),
+  		},
+  		init: function() {
+  			this.setInitialState();
+  			this.bindUIActions();
+  		},
+      bindUIActions: function() {
+  			this.settings.input.on('focus blur', function(e) { formHandler.toggleLabel($(this), e); });
+        this.settings.comment_form.on('submit', this.submit);
+  		},
+
+      // Handle form submission requests
+  		submit: function(e) {
+        if( !formHandler.checkRequiredValues($(this)) ) return false;
+        return true;
+  		},
+
+      // Check if Form has Required Values
+  		checkRequiredValues: function($form) {
+  			var requirments_met = true;
+  			$form.find('.requiredfield').each(function(){
+  				if($(this).val()===''){
+  					$(this).closest('.field').addClass('error');
+  					requirments_met = false;
+  				}
+  			});
+  			return requirments_met;
+  		},
+
+      // Check if there's a value and apply label styles
+      setInitialState: function() {
+  			this.settings.input.each(function(i) {
+  				if($(this).val() != '') {
+  					$(this).closest('.field').addClass('label-up');
+  				}
+  			});
+  		},
+
+  		// Determines the position of a field's label based on focus and value
+  		toggleLabel: function(elem, e) {
+  			if(e.type == 'focus') {
+          console.log('focused');
+  				elem.closest('.field').addClass('label-up');
+  				elem.closest('.field').removeClass('error');
+  			}
+  			if((e.type == 'blur') && (elem.val() == '')) {
+  				elem.closest('.field').removeClass('label-up');
+  				if(elem.hasClass('requiredfield')){
+  					elem.closest('.field').addClass('error');
+  				}
+  			}
+  		}
+  	};
+  	formHandler.init();
+
 })(jQuery);
